@@ -124,3 +124,19 @@ ping google.com
 # `-d` delimiter
 # `-f` field
 ping -c 2 google.com | grep 'bytes from' | cut -d = -f 4
+
+# to execute a script
+bash my.sh
+
+# -rw-r--r-- 1 xiatong xiatong      23 Apr 23 14:19 my.sh
+./my.sh
+# bash: ./my.sh: Permission denied
+
+# `chmod` change mode (of access)
+chmod +x my.sh
+# -rwxr-xr-x 1 xiatong xiatong      23 Apr 23 14:19 my.sh
+
+# add a script /usr/bin
+sudo cp my.sh /usr/bin
+my.sh
+sudo rm /usr/bin/my.sh
